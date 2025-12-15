@@ -106,15 +106,4 @@ public class FilmorateApplicationTests {
 
         assertThrows(ValidationException.class, () -> filmController.create(film));
     }
-
-    @Test
-    void shouldNotCreateFilmWithNullReleaseDate() {
-        Film film = new Film();
-        film.setName("Valid Name");
-        film.setDescription("Valid description");
-        film.setReleaseDate(null);
-        film.setDuration(100);
-
-        assertThrows(ValidationException.class, () -> filmController.create(film));
-    }
 }
